@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MISTEA -XP-</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="#home">HOME</a>
+  <a href="#tea">TEA 11</a>
+  <a href="#non">NON TEA</a>
+  <a href="#mie">MIE XP</a>
+  <a href="#pesan">PESAN</a>
+</nav>
+
+<section id="home" class="hero-full">
+  <div class="hero-wrap">
+    <div class="logo-frame">
+      <img src="poto1/logo.jpeg" class="logo" alt="Logo MISTEA XP">
+    </div>
+    <div class="hero-text">
+      <h1>MISTEA<br><span>-XP-</span></h1>
+      <div class="garis"></div>
+      <p class="tagline">ES TEH DESA </p>
+      <p class="slogan">Dari desa untuk Indonesia</p>
+      <div class="hero-btn">
+        <a href="#tea" class="btn">LIHAT MENU</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tea" class="sec">
+  <h2>🍵 TEA SERIES - 11 VARIAN</h2>
+  <div class="grid" id="teaGrid"></div>
+</section>
+
+<section id="non" class="sec cream">
+  <h2>☕ NON TEA - 4 VARIAN</h2>
+  <div class="grid grid-4" id="nonGrid"></div>
+</section>
+
+<section id="mie" class="sec hijau">
+  <h2 class="putih">🍜 MIE XP JEBEW 12K</h2>
+  <div class="mie-box">
+    <div class="mie-img">
+      <img src="poto1/MIE XP.jpeg" alt="Mie XP">
+      <span class="badge">🔥 BEST SELLER</span>
+    </div>
+    <div class="mie-list">
+      <div class="level" onclick="addMie(1)"><b>Level 1</b><span>12k</span></div>
+      <div class="level" onclick="addMie(2)"><b>Level 2</b><span>12k</span></div>
+      <div class="level" onclick="addMie(3)"><b>Level 3</b><span>12k</span></div>
+      <div class="level hot" onclick="addMie(4)"><b>Level 4 XP</b><span>12k</span></div>
+      <div class="level hottest" onclick="addMie(5)"><b>Level 5 JEBEW</b><span>1k</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="pesan" class="sec">
+  <h2>🛒 PESAN SEKARANG</h2>
+  <div class="cart">
+    <div id="cartBox" class="cart-items">Belum ada pesanan ji</div>
+    <div class="total"><span>TOTAL:</span><b id="total">Rp 0</b></div>
+    <a class="wa" href="#" onclick="pesanWA(); return false;">💬 WHATSAPP 0812 6358 9001</a>
+
+    <div class="alamat">
+      <span class="alamat-icon">📍</span>
+      <div>
+        <strong>Alamat Kami</strong>
+        <p>Jl. Arkheologi Raya (Alfamidi Tamangapa), Bangkala, Manggala, Kota Makassar, 90235</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
