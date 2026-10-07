@@ -34,6 +34,7 @@ a:focus-visible,.card:focus-visible,.level:focus-visible{outline:3px solid var(-
 }
 .hero-wrap{display:flex;gap:64px;align-items:center;justify-content:center;max-width:1000px}
 
+/* bingkai logo: putih bawaan gambar dipotong lewat zoom */
 .logo-frame{
   width:320px;height:320px;flex-shrink:0;
   border-radius:50%;
@@ -53,6 +54,8 @@ a:focus-visible,.card:focus-visible,.level:focus-visible{outline:3px solid var(-
 .hero-btn{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .btn{display:inline-block;background:var(--orange);color:#fff;padding:14px 30px;border-radius:25px;text-decoration:none;font-weight:900;font-size:14px;border:2px solid var(--orange);transition:transform .2s,box-shadow .2s,background .2s}
 .btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(255,106,42,.4)}
+.btn-garis{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+.btn-garis:hover{background:#fff;color:var(--hijau);border-color:#fff;box-shadow:none}
 
 /* ===== SECTION ===== */
 .sec{padding:56px 16px;max-width:1180px;margin:0 auto}
@@ -61,7 +64,7 @@ a:focus-visible,.card:focus-visible,.level:focus-visible{outline:3px solid var(-
 .sec h2{background:var(--hijau);color:#fff;display:table;margin:0 auto 28px;padding:12px 28px;border-radius:100px;font-size:14px;text-align:center;letter-spacing:.5px}
 .sec h2.putih{background:#fff;color:var(--hijau)}
 
-/* ===== GRID MENU ===== */
+/* ===== GRID MENU (baris terakhir otomatis di tengah) ===== */
 .grid{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--gap)}
 .grid .card{width:calc((100% - 3 * var(--gap)) / 4)}
 
@@ -90,86 +93,18 @@ a:focus-visible,.card:focus-visible,.level:focus-visible{outline:3px solid var(-
 .level.hottest{border-left-color:red;background:var(--hijau);color:#fff}
 .level.hottest:hover{background:#14503c}
 
-/* ===== KERANJANG & PESANAN ===== */
-.cart {
-  background: #ffffff;
-  padding: 28px 24px;
-  border-radius: 24px;
-  max-width: 480px;
-  margin: 0 auto;
-  box-shadow: 0 15px 35px rgba(14, 61, 46, 0.1);
-  border: 1px solid #eee8d8;
-}
+/* ===== KERANJANG ===== */
+.cart{background:#fff;padding:28px 24px;border-radius:24px;max-width:520px;margin:0 auto;box-shadow:0 15px 35px rgba(14,61,46,.1);border:1px solid var(--garis)}
+.cart-items{font-size:13px;color:#555;min-height:40px;max-height:300px;overflow-y:auto}
+.cart-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 0;border-bottom:1px dashed #ddd;font-size:13px;color:#222}
+.cart-row span:last-child{white-space:nowrap}
+.hapus{color:#e53935;cursor:pointer;margin-left:6px;padding:2px 6px;border-radius:6px}
+.hapus:hover{background:#fdecea}
+.total{background:var(--hijau);color:#fff;padding:14px 16px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;margin:16px 0;font-weight:900}
+.wa{display:block;background:#25D366;color:#fff;text-align:center;padding:15px;border-radius:12px;text-decoration:none;font-weight:900;margin-bottom:22px;transition:filter .2s,transform .2s}
+.wa:hover{filter:brightness(.92);transform:translateY(-2px)}
 
-.cart-items {
-  font-size: 14px;
-  color: #666;
-  min-height: 48px;
-  max-height: 280px;
-  overflow-y: auto;
-}
-
-.cart-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  padding: 9px 0;
-  border-bottom: 1px dashed #ddd;
-  font-size: 13px;
-  color: #222;
-}
-
-.hapus {
-  color: #e53935;
-  cursor: pointer;
-  margin-left: 6px;
-  padding: 2px 6px;
-  border-radius: 6px;
-}
-
-.hapus:hover {
-  background: #fdecea;
-}
-
-.total {
-  background: var(--hijau);
-  color: #fff;
-  padding: 16px 20px;
-  border-radius: 14px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 18px 0;
-  font-weight: 900;
-  font-size: 16px;
-  box-shadow: 0 4px 12px rgba(14, 61, 46, 0.15);
-}
-
-.wa {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: #25D366;
-  color: #fff;
-  text-align: center;
-  padding: 15px;
-  border-radius: 14px;
-  text-decoration: none;
-  font-weight: 900;
-  font-size: 14px;
-  margin-bottom: 22px;
-  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.wa:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
-}
-
-/* PEMBATAS & TITLE ONLINE FOOD */
+/* ===== TAMPILAN ORDER ONLINE ===== */
 .online-order {
   margin-bottom: 22px;
   text-align: center;
@@ -203,7 +138,6 @@ a:focus-visible,.card:focus-visible,.level:focus-visible{outline:3px solid var(-
   z-index: 0;
 }
 
-/* TOMBOL OJEK ONLINE */
 .online-buttons {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -222,7 +156,7 @@ a:focus-visible,.card:focus-visible,.level:focus-visible{outline:3px solid var(-
   font-weight: 800;
   font-size: 11px;
   color: #fff;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s;
 }
 
 .btn-online:hover {
@@ -248,22 +182,13 @@ a:focus-visible,.card:focus-visible,.level:focus-visible{outline:3px solid var(-
   box-shadow: 0 4px 10px rgba(238, 77, 45, 0.2);
 }
 
-/* ALAMAT */
-.alamat {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  background: #fcf9f2;
-  border: 1px dashed #e2dcd0;
-  border-radius: 14px;
-  padding: 14px;
-}
+/* ===== ALAMAT ===== */
+.alamat{display:flex;gap:12px;align-items:flex-start;background:#fffaf0;border:1px solid var(--garis);border-radius:12px;padding:16px}
+.alamat-icon{font-size:22px;line-height:1}
+.alamat strong{display:block;font-size:13px;color:var(--hijau);margin-bottom:4px}
+.alamat p{font-size:13px;line-height:1.55;color:#444}
 
-.alamat-icon { font-size: 20px; }
-.alamat strong { display: block; font-size: 13px; color: var(--hijau); margin-bottom: 2px; }
-.alamat p { font-size: 12px; color: #555; line-height: 1.4; }
-
-/* ===== MEDIA QUERIES (RESPONSIVE) ===== */
+/* ===== TABLET ===== */
 @media(max-width:900px){
   :root{--gap:10px}
   .grid .card{width:calc((100% - 2 * var(--gap)) / 3)}
@@ -271,6 +196,7 @@ a:focus-visible,.card:focus-visible,.level:focus-visible{outline:3px solid var(-
   .hero-text h1 span{font-size:68px}
 }
 
+/* ===== HP ===== */
 @media(max-width:600px){
   .hero-wrap{flex-direction:column;text-align:center;gap:28px}
   .logo{width:220px;height:220px;border-width:6px}
@@ -288,7 +214,7 @@ a:focus-visible,.card:focus-visible,.level:focus-visible{outline:3px solid var(-
   .mie-img{min-height:260px;flex:none}
   .mie-list{padding:16px}
 
-  .cart{padding:20px 16px}
+  .cart{padding:18px}
   .online-buttons { grid-template-columns: 1fr; gap: 8px; }
   .btn-online { flex-direction: row; padding: 12px; font-size: 12px; }
   .nav a{font-size:10px;padding:9px 2px}
