@@ -2,96 +2,231 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MISTEA -XP-</title>
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mistea XP - Es Teh Desa</title>
+<style>
+  :root {
+    --hijau-gelap: #0a3d2e;
+    --hijau: #1c5a3c;
+    --oranye: #ff6a2a;
+    --krem: #f7b98a;
+    --putih: #ffffff;
+    --nav-h: 80px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--hijau-gelap);
+    color: var(--putih);
+    line-height: 1.5;
+  }
+  img { max-width: 100%; display: block; }
+  .wrap { max-width: 1400px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 48px); width: 100%; }
+
+  /* NAVBAR */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    height: var(--nav-h);
+    background: #0d3b2c;
+    box-shadow: 0 4px 16px rgba(0,0,0,.3);
+  }
+  nav .wrap {
+    height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    gap: 12px;
+    overflow-x: auto;
+  }
+  nav a {
+    flex: 1 1 0; min-width: 100px; max-width: 240px;
+    text-align: center; text-decoration: none;
+    color: var(--putih); font-weight: 800;
+    font-size: clamp(.85rem, 1.5vw, 1.15rem);
+    padding: 14px 10px;
+    background: var(--hijau);
+    border-radius: 999px;
+    white-space: nowrap;
+    transition: background .2s;
+  }
+  nav a:hover, nav a:focus-visible { background: var(--oranye); outline: none; }
+
+  /* HERO */
+  .hero {
+    min-height: calc(100vh - var(--nav-h));
+    display: flex; align-items: center;
+    padding: 48px 0;
+    background: linear-gradient(135deg, var(--hijau-gelap), var(--hijau));
+  }
+  .hero .wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(24px, 5vw, 72px);
+  }
+  .logo-box { display: flex; justify-content: center; }
+  .logo-box img {
+    width: clamp(220px, 36vw, 480px);
+    max-height: 70vh;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    border-radius: 50%;
+    background: var(--putih);
+    border: 8px solid var(--oranye);
+    box-shadow: 0 0 0 16px rgba(255,106,42,.15), 0 24px 60px rgba(0,0,0,.45);
+  }
+  .hero h1 {
+    margin: 0;
+    font-family: "Arial Black", Impact, sans-serif;
+    font-size: clamp(2.8rem, 8vw, 6.5rem);
+    line-height: .95;
+    letter-spacing: -1px;
+  }
+  .hero h1 span { display: block; color: var(--oranye); }
+  .garis { width: 100px; height: 9px; border-radius: 9px; background: var(--oranye); margin: 30px 0 24px; }
+  .tag { margin: 0; font-weight: 800; letter-spacing: .3em; color: var(--krem); font-size: clamp(1.1rem, 2.2vw, 1.6rem); }
+  .slogan { margin: 8px 0 34px; font-style: italic; color: #cfe3d8; font-size: clamp(1.1rem, 2vw, 1.5rem); }
+  .btn {
+    display: inline-block; text-decoration: none;
+    background: var(--oranye); color: var(--putih);
+    font-weight: 800; font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    padding: 18px 52px; border-radius: 999px;
+    transition: transform .2s, background .2s;
+  }
+  .btn:hover, .btn:focus-visible { transform: translateY(-2px); background: #ff7f47; outline: none; }
+
+  /* SECTION MENU (BESAR, 1 LAYAR PENUH) */
+  section.menu {
+    min-height: calc(100vh - var(--nav-h));
+    display: flex; align-items: center;
+    padding: clamp(56px, 8vw, 110px) 0;
+  }
+  section.menu:nth-of-type(even) { background: #0d4a37; }
+  section.menu h2 {
+    margin: 0 0 12px;
+    font-family: "Arial Black", Impact, sans-serif;
+    font-size: clamp(2.6rem, 7vw, 5.5rem);
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+  section.menu p.ket {
+    margin: 0 0 clamp(28px, 4vw, 52px);
+    color: #cfe3d8;
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+    max-width: 40ch;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: clamp(16px, 2vw, 28px);
+  }
+  .item {
+    background: var(--hijau);
+    border-left: 10px solid var(--oranye);
+    border-radius: 20px;
+    padding: clamp(24px, 3vw, 40px);
+    min-height: 170px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    gap: 16px;
+  }
+  .item h3 { margin: 0; font-size: clamp(1.4rem, 2.6vw, 2.1rem); line-height: 1.15; }
+  .item span { color: var(--krem); font-weight: 800; font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
+
+  footer {
+    text-align: center;
+    padding: 40px 24px;
+    background: #072c21;
+    color: #9fc0b0;
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+  }
+
+  /* HP / LAYAR KECIL */
+  @media (max-width: 820px) {
+    .hero { min-height: auto; }
+    .hero .wrap { grid-template-columns: 1fr; text-align: center; }
+    .garis { margin-left: auto; margin-right: auto; }
+    .logo-box img { width: clamp(200px, 60vw, 320px); }
+    section.menu { min-height: auto; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
 </head>
 <body>
 
-<nav class="nav">
-  <a href="#home">HOME</a>
-  <a href="#tea">TEA 11</a>
-  <a href="#non">NON TEA</a>
-  <a href="#mie">MIE XP</a>
-  <a href="#pesan">PESAN</a>
+<nav>
+  <div class="wrap">
+    <a href="#home">HOME</a>
+    <a href="#tea11">TEA 11</a>
+    <a href="#nontea">NON TEA</a>
+    <a href="#miexp">MIE XP</a>
+    <a href="#pesan">PESAN</a>
+  </div>
 </nav>
 
-<section id="home" class="hero-full">
-  <div class="hero-wrap">
-    <div class="logo-frame">
-      <img src="poto1/logo.jpeg" class="logo" alt="Logo MISTEA XP">
+<header class="hero" id="home">
+  <div class="wrap">
+    <div class="logo-box">
+      <!-- Simpan file logo kamu di folder yang sama dengan nama logo.png -->
+      <img src="logo.png" alt="Logo Mistea XP - Es Teh Desa & Co.">
     </div>
-    <div class="hero-text">
-      <h1>MISTEA<br><span>-XP-</span></h1>
+    <div>
+      <h1>MISTEA <span>-XP-</span></h1>
       <div class="garis"></div>
-      <p class="tagline">ES TEH DESA </p>
+      <p class="tag">ES TEH DESA</p>
       <p class="slogan">Dari desa untuk Indonesia</p>
-      <div class="hero-btn">
-        <a href="#tea" class="btn">LIHAT MENU</a>
-      </div>
+      <a class="btn" href="#tea11">Lihat menu</a>
+    </div>
+  </div>
+</header>
+
+<!-- Ganti nama menu dan harga sesuai menu aslimu -->
+<section class="menu" id="tea11">
+  <div class="wrap">
+    <h2>Tea 11</h2>
+    <p class="ket">Es teh pilihan dengan 11 varian rasa.</p>
+    <div class="grid">
+      <div class="item"><h3>Teh Original</h3><span>Rp 3.000</span></div>
+      <div class="item"><h3>Teh Lemon</h3><span>Rp 5.000</span></div>
+      <div class="item"><h3>Teh Susu</h3><span>Rp 6.000</span></div>
     </div>
   </div>
 </section>
 
-<section id="tea" class="sec">
-  <h2>🍵 TEA SERIES - 11 VARIAN</h2>
-  <div class="grid" id="teaGrid"></div>
-</section>
-
-<section id="non" class="sec cream">
-  <h2>☕ NON TEA - 4 VARIAN</h2>
-  <div class="grid grid-4" id="nonGrid"></div>
-</section>
-
-<section id="mie" class="sec hijau">
-  <h2 class="putih">🍜 MIE XP JEBEW 12K</h2>
-  <div class="mie-box">
-    <div class="mie-img">
-      <img src="poto1/MIE XP.jpeg" alt="Mie XP">
-      <span class="badge">🔥 BEST SELLER</span>
-    </div>
-    <div class="mie-list">
-      <div class="level" onclick="addMie(1)"><b>Level 1</b><span>12k</span></div>
-      <div class="level" onclick="addMie(2)"><b>Level 2</b><span>12k</span></div>
-      <div class="level" onclick="addMie(3)"><b>Level 3</b><span>12k</span></div>
-      <div class="level hot" onclick="addMie(4)"><b>Level 4 XP</b><span>12k</span></div>
-      <div class="level hottest" onclick="addMie(5)"><b>Level 5 JEBEW</b><span>12k</span></div>
+<section class="menu" id="nontea">
+  <div class="wrap">
+    <h2>Non Tea</h2>
+    <p class="ket">Pilihan minuman segar selain teh.</p>
+    <div class="grid">
+      <div class="item"><h3>Jeruk</h3><span>Rp 5.000</span></div>
+      <div class="item"><h3>Coklat</h3><span>Rp 6.000</span></div>
     </div>
   </div>
 </section>
 
-<section id="pesan" class="sec">
-  <h2>🛒 PESAN SEKARANG</h2>
-  <div class="cart">
-    <div id="cartBox" class="cart-items">Belum ada pesanan ji</div>
-    <div class="total"><span>TOTAL:</span><b id="total">Rp 0</b></div>
-    <a class="wa" href="#" onclick="pesanWA(); return false;">💬 WHATSAPP 0812 6358 9001</a>
-
-    <div class="online-order">
-      <p class="order-title"><span>Atau pesan via Online Food</span></p>
-      <div class="online-buttons">
-        <a href="https://gofood.link/" target="_blank" rel="noopener" class="btn-online gofood">
-          <span class="app-icon">🛵</span> GoFood
-        </a>
-        <a href="https://food.grab.com/" target="_blank" rel="noopener" class="btn-online grabfood">
-          <span class="app-icon">🟢</span> GrabFood
-        </a>
-        <a href="https://shopee.co.id/shopeefood" target="_blank" rel="noopener" class="btn-online shopeefood">
-          <span class="app-icon">🧡</span> ShopeeFood
-        </a>
-      </div>
-    </div>
-
-    <div class="alamat">
-      <span class="alamat-icon">📍</span>
-      <div>
-        <strong>Alamat Kami</strong>
-        <p>Jl. Arkheologi Raya (Alfamidi Tamangapa), Bangkala, Manggala, Kota Makassar, 90235</p>
-      </div>
+<section class="menu" id="miexp">
+  <div class="wrap">
+    <h2>Mie XP</h2>
+    <p class="ket">Mie hangat untuk teman minum teh.</p>
+    <div class="grid">
+      <div class="item"><h3>Mie Original</h3><span>Rp 8.000</span></div>
+      <div class="item"><h3>Mie Pedas</h3><span>Rp 10.000</span></div>
     </div>
   </div>
 </section>
 
-<script src="script.js"></script>
+<section class="menu" id="pesan">
+  <div class="wrap">
+    <h2>Pesan sekarang</h2>
+    <p class="ket">Pesan lewat WhatsApp, kami siapkan secepatnya.</p>
+    <!-- Ganti 628xxxxxxxxxx dengan nomor WhatsApp kamu (awali 62, tanpa 0 dan tanpa +) -->
+    <a class="btn" href="https://wa.me/628xxxxxxxxxx" target="_blank" rel="noopener">Pesan via WhatsApp</a>
+  </div>
+</section>
+
+<footer>&copy; Mistea XP - Es Teh Desa &amp; Co.</footer>
+
 </body>
 </html>
