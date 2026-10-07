@@ -139,3 +139,197 @@ a:focus-visible,.card:focus-visible,.level:focus-visible{outline:3px solid var(-
   .cart{padding:18px}
   .nav a{font-size:10px;padding:9px 2px}
 }
+/* ===== TAMBAHAN CSS ORDER ONLINE (GoFood, GrabFood, ShopeeFood) ===== */
+.online-order {
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.order-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.online-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.btn-online {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px 6px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 11px;
+  color: #fff;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+/* ===== DESAIN BARU KERANJANG & ORDER ONLINE ===== */
+.cart {
+  background: #ffffff;
+  padding: 28px 24px;
+  border-radius: 24px;
+  max-width: 480px;
+  margin: 0 auto;
+  box-shadow: 0 15px 35px rgba(14, 61, 46, 0.1);
+  border: 1px solid #eee8d8;
+}
+
+.cart-items {
+  font-size: 14px;
+  color: #666;
+  min-height: 48px;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.total {
+  background: var(--hijau);
+  color: #fff;
+  padding: 16px 20px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 18px 0;
+  font-weight: 900;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(14, 61, 46, 0.15);
+}
+
+.wa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #25D366;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.wa:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* PEMBATAS & TITLE ONLINE FOOD */
+.online-order {
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+.order-title {
+  font-size: 12px;
+  font-weight: 800;
+  color: #888;
+  margin-bottom: 12px;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.order-title span {
+  background: #fff;
+  padding: 0 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.order-title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e2dcd0;
+  z-index: 0;
+}
+
+/* TOMBOL OJEK ONLINE */
+.online-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.btn-online {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px 4px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 11px;
+  color: #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-online:hover {
+  transform: translateY(-3px);
+}
+
+.app-icon {
+  font-size: 16px;
+}
+
+.btn-online.gofood {
+  background: #00880c;
+  box-shadow: 0 4px 10px rgba(0, 136, 12, 0.2);
+}
+
+.btn-online.grabfood {
+  background: #00b14f;
+  box-shadow: 0 4px 10px rgba(0, 177, 79, 0.2);
+}
+
+.btn-online.shopeefood {
+  background: #ee4d2d;
+  box-shadow: 0 4px 10px rgba(238, 77, 45, 0.2);
+}
+
+/* ALAMAT */
+.alamat {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: #fcf9f2;
+  border: 1px dashed #e2dcd0;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+@media(max-width: 480px) {
+  .cart {
+    padding: 20px 16px;
+  }
+  .online-buttons {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .btn-online {
+    flex-direction: row;
+    padding: 12px;
+    font-size: 12px;
+  }
+}
