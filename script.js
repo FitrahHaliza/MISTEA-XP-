@@ -2,26 +2,25 @@
 const NOMOR_WA = "6281263589001";
 
 const tea = [
-  { nama: "TEH RACIK",    harga: 5000,  foto: "poto1/TEH RACIK.jpg" },
-  { nama: "LEMON TEA",    harga: 8000,  foto: "poto1/LEMON TEA.jpg" },
-  { nama: "JERUK SEGAR",  harga: 8000,  foto: "poto1/JERUK SEGAR.jpg" },
-  { nama: "TEH KAMPUL",   harga: 10000, foto: "poto1/TEH KAMPUL.jpg" },
-  { nama: "MELON TEA",    harga: 10000, foto: "poto1/MELON TEA.jpg" },
-  { nama: "LYCHEE TEA",   harga: 10000, foto: "poto1/LYCHEE TEA.jpg" },
-  { nama: "MANGO FRUIT",  harga: 10000, foto: "poto1/MANGO FRUIT.jpg" },
-  { nama: "THAI TEA",     harga: 12000, foto: "poto1/THAI TEA.jpg" },
-  { nama: "GREEN TEA",    harga: 12000, foto: "poto1/GREEN TEA.jpg" },
-  { nama: "MATCHA LATTE", harga: 13000, foto: "poto1/MATCHA LATTE.jpg" },
-  { nama: "MILO TEA",     harga: 13000, foto: "poto1/MILO TEA.jpg" }
+  { nama: "TEH RACIK",    harga: 5000,  foto: "poto1/TEH%20RACIK.jpg" },
+  { nama: "LEMON TEA",    harga: 8000,  foto: "poto1/LEMON%20TEA.jpg" },
+  { nama: "JERUK SEGAR",  harga: 8000,  foto: "poto1/JERUK%20SEGAR.jpg" },
+  { nama: "TEH KAMPUL",   harga: 10000, foto: "poto1/TEH%20KAMPUL.jpg" },
+  { nama: "MELON TEA",    harga: 10000, foto: "poto1/MELON%20TEA.jpg" },
+  { nama: "LYCHEE TEA",   harga: 10000, foto: "poto1/LYCHEE%20TEA.jpg" },
+  { nama: "MANGO FRUIT",  harga: 10000, foto: "poto1/MANGO%20FRUIT.jpg" },
+  { nama: "THAI TEA",     harga: 12000, foto: "poto1/THAI%20TEA.jpg" },
+  { nama: "GREEN TEA",    harga: 12000, foto: "poto1/GREEN%20TEA.jpg" },
+  { nama: "MATCHA LATTE", harga: 13000, foto: "poto1/MATCHA%20LATTE.jpg" },
+  { nama: "MILO TEA",     harga: 13000, foto: "poto1/MILO%20TEA.jpg" }
 ];
 
 const non = [
-  { nama: "KOPI AREN",       harga: 13000, foto: "poto1/KOPI AREN.jpg" },
-  { nama: "KOPI SUSU",       harga: 13000, foto: "poto1/KOPI SUSU.jpg" },
-  { nama: "DARK CHOCOLATE",  harga: 13000, foto: "poto1/DARK CHOCOLATE.jpg" },
-  { nama: "TARO MACCHIATTO", harga: 13000, foto: "poto1/TARO MACCHIATTO.jpg" }
+  { nama: "KOPI AREN",       harga: 13000, foto: "poto1/KOPI%20AREN.jpg" },
+  { nama: "KOPI SUSU",       harga: 13000, foto: "poto1/KOPI%20SUSU.jpg" },
+  { nama: "DARK CHOCOLATE",  harga: 13000, foto: "poto1/DARK%20CHOCOLATE.jpg" },
+  { nama: "TARO MACCHIATTO", harga: 13000, foto: "poto1/TARO%20MACCHIATTO.jpg" }
 ];
-
 const HARGA_MIE = 12000;
 const menu = { tea, non };
 let cart = [];
