@@ -7,7 +7,7 @@
   --cream:#f7f3e8;
   --putih:#fff;
   --garis:#eee8d8;
-  --gap:14px;
+  --gap:16px;
   --radius:16px;
 }
 
@@ -17,14 +17,14 @@ img{display:block;max-width:100%}
 a:focus-visible,.card:focus-visible,.level:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
 
 /* ===== NAV ===== */
-.nav{display:flex;justify-content:center;gap:6px;padding:10px;background:var(--hijau);position:sticky;top:0;z-index:99;box-shadow:0 2px 10px rgba(0,0,0,.2)}
-.nav a{flex:1;max-width:140px;padding:10px 4px;background:var(--hijau-muda);color:#fff;text-align:center;border-radius:20px;text-decoration:none;font-weight:900;font-size:11px;transition:background .2s}
+.nav{display:flex;justify-content:center;gap:8px;padding:12px;background:var(--hijau);position:sticky;top:0;z-index:99;box-shadow:0 2px 10px rgba(0,0,0,.2)}
+.nav a{flex:1;max-width:160px;padding:12px 6px;background:var(--hijau-muda);color:#fff;text-align:center;border-radius:20px;text-decoration:none;font-weight:900;font-size:12px;transition:background .2s}
 .nav a:hover{background:var(--orange)}
 
-/* ===== HERO ===== */
+/* ===== HERO (Dibuat Responsif Terhadap Ukuran Layar) ===== */
 .hero-full{
   width:100%;
-  min-height:calc(100vh - 56px);
+  min-height:calc(100vh - 60px);
   display:flex;align-items:center;justify-content:center;
   padding:40px 20px;
   background:
@@ -32,11 +32,13 @@ a:focus-visible,.card:focus-visible,.level:focus-visible{outline:3px solid var(-
     radial-gradient(circle at 80% 20%, rgba(255,255,255,.05), transparent 40%),
     var(--hijau);
 }
-.hero-wrap{display:flex;gap:64px;align-items:center;justify-content:center;max-width:1000px}
+.hero-wrap{display:flex;gap:clamp(30px, 5vw, 80px);align-items:center;justify-content:center;max-width:1200px;width:100%}
 
-/* bingkai logo: putih bawaan gambar dipotong lewat zoom */
+/* Bingkai Logo Menggunakan Clamp Agar Proporsional */
 .logo-frame{
-  width:320px;height:320px;flex-shrink:0;
+  width:clamp(220px, 28vw, 360px);
+  height:clamp(220px, 28vw, 360px);
+  flex-shrink:0;
   border-radius:50%;
   border:8px solid var(--orange);
   overflow:hidden;
@@ -45,26 +47,25 @@ a:focus-visible,.card:focus-visible,.level:focus-visible{outline:3px solid var(-
 }
 .logo{width:100%;height:100%;object-fit:cover;transform:scale(1.16);border:0;border-radius:0}
 
-.hero-text h1{font-size:76px;color:#fff;line-height:.95;font-weight:900;letter-spacing:1px}
-.hero-text h1 span{color:var(--orange);font-size:84px}
+/* Judul Teks Menggunakan Clamp (Min, Ideal, Max) */
+.hero-text h1{font-size:clamp(48px, 6vw, 84px);color:#fff;line-height:.95;font-weight:900;letter-spacing:1px}
+.hero-text h1 span{color:var(--orange);font-size:clamp(54px, 7vw, 92px)}
 .garis{width:70px;height:5px;background:var(--orange);border-radius:5px;margin:20px 0 16px}
-.tagline{color:#ffb88a;letter-spacing:4px;font-weight:900;font-size:15px}
-.slogan{color:rgba(255,255,255,.7);font-size:14px;margin-top:6px;font-style:italic}
+.tagline{color:#ffb88a;letter-spacing:4px;font-weight:900;font-size:clamp(13px, 1.5vw, 18px)}
+.slogan{color:rgba(255,255,255,.7);font-size:clamp(12px, 1.2vw, 16px);margin-top:6px;font-style:italic}
 
 .hero-btn{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.btn{display:inline-block;background:var(--orange);color:#fff;padding:14px 30px;border-radius:25px;text-decoration:none;font-weight:900;font-size:14px;border:2px solid var(--orange);transition:transform .2s,box-shadow .2s,background .2s}
+.btn{display:inline-block;background:var(--orange);color:#fff;padding:14px 32px;border-radius:25px;text-decoration:none;font-weight:900;font-size:15px;border:2px solid var(--orange);transition:transform .2s,box-shadow .2s,background .2s}
 .btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(255,106,42,.4)}
-.btn-garis{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
-.btn-garis:hover{background:#fff;color:var(--hijau);border-color:#fff;box-shadow:none}
 
 /* ===== SECTION ===== */
-.sec{padding:56px 16px;max-width:1180px;margin:0 auto}
+.sec{padding:60px 20px;max-width:1200px;margin:0 auto}
 .sec.cream{background:#fefcf5;border-radius:24px}
 .sec.hijau{background:var(--hijau);max-width:100%;border-radius:30px 30px 0 0;margin-top:24px;padding-bottom:64px}
-.sec h2{background:var(--hijau);color:#fff;display:table;margin:0 auto 28px;padding:12px 28px;border-radius:100px;font-size:14px;text-align:center;letter-spacing:.5px}
+.sec h2{background:var(--hijau);color:#fff;display:table;margin:0 auto 28px;padding:12px 28px;border-radius:100px;font-size:15px;text-align:center;letter-spacing:.5px}
 .sec h2.putih{background:#fff;color:var(--hijau)}
 
-/* ===== GRID MENU (baris terakhir otomatis di tengah) ===== */
+/* ===== GRID MENU ===== */
 .grid{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--gap)}
 .grid .card{width:calc((100% - 3 * var(--gap)) / 4)}
 
@@ -72,13 +73,13 @@ a:focus-visible,.card:focus-visible,.level:focus-visible{outline:3px solid var(-
 .card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,.13)}
 .card:active{transform:scale(.97)}
 
-.img-wrap{width:100%;aspect-ratio:1/1;max-height:190px;background:#fffaf0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.img-wrap{width:100%;aspect-ratio:1/1;max-height:220px;background:#fffaf0;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .card img{width:100%;height:100%;object-fit:contain;object-position:center;padding:8px}
 
 .badge-harga{position:absolute;top:8px;left:8px;background:var(--hijau);color:#fff;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:900;z-index:2}
-.info{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:0 10px;background:#fff;border-top:1px solid #f5f0e6;height:48px}
-.info p{font-size:11px;font-weight:900;color:var(--hijau);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
-.info b{background:var(--orange);color:#fff;padding:6px 10px;border-radius:20px;font-size:10px;flex-shrink:0;white-space:nowrap}
+.info{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:0 12px;background:#fff;border-top:1px solid #f5f0e6;height:52px}
+.info p{font-size:12px;font-weight:900;color:var(--hijau);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.info b{background:var(--orange);color:#fff;padding:6px 10px;border-radius:20px;font-size:11px;flex-shrink:0;white-space:nowrap}
 
 /* ===== MIE ===== */
 .mie-box{display:flex;max-width:900px;margin:0 auto;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.2)}
@@ -105,82 +106,18 @@ a:focus-visible,.card:focus-visible,.level:focus-visible{outline:3px solid var(-
 .wa:hover{filter:brightness(.92);transform:translateY(-2px)}
 
 /* ===== TAMPILAN ORDER ONLINE ===== */
-.online-order {
-  margin-bottom: 22px;
-  text-align: center;
-}
+.online-order{margin-bottom:22px;text-align:center}
+.order-title{font-size:12px;font-weight:800;color:#888;margin-bottom:12px;position:relative;text-transform:uppercase;letter-spacing:.5px}
+.order-title span{background:#fff;padding:0 10px;position:relative;z-index:1}
+.order-title::before{content:"";position:absolute;top:50%;left:0;right:0;height:1px;background:#e2dcd0;z-index:0}
 
-.order-title {
-  font-size: 12px;
-  font-weight: 800;
-  color: #888;
-  margin-bottom: 12px;
-  position: relative;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.order-title span {
-  background: #fff;
-  padding: 0 10px;
-  position: relative;
-  z-index: 1;
-}
-
-.order-title::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: #e2dcd0;
-  z-index: 0;
-}
-
-.online-buttons {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-}
-
-.btn-online {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  padding: 10px 4px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 800;
-  font-size: 11px;
-  color: #fff;
-  transition: transform 0.2s;
-}
-
-.btn-online:hover {
-  transform: translateY(-3px);
-}
-
-.app-icon {
-  font-size: 16px;
-}
-
-.btn-online.gofood {
-  background: #00880c;
-  box-shadow: 0 4px 10px rgba(0, 136, 12, 0.2);
-}
-
-.btn-online.grabfood {
-  background: #00b14f;
-  box-shadow: 0 4px 10px rgba(0, 177, 79, 0.2);
-}
-
-.btn-online.shopeefood {
-  background: #ee4d2d;
-  box-shadow: 0 4px 10px rgba(238, 77, 45, 0.2);
-}
+.online-buttons{display:grid;grid-template-columns:repeat(3, 1fr);gap:8px}
+.btn-online{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:10px 4px;border-radius:12px;text-decoration:none;font-weight:800;font-size:11px;color:#fff;transition:transform .2s}
+.btn-online:hover{transform:translateY(-3px)}
+.app-icon{font-size:16px}
+.btn-online.gofood{background:#00880c;box-shadow:0 4px 10px rgba(0,136,12,.2)}
+.btn-online.grabfood{background:#00b14f;box-shadow:0 4px 10px rgba(0,177,79,.2)}
+.btn-online.shopeefood{background:#ee4d2d;box-shadow:0 4px 10px rgba(238,77,45,.2)}
 
 /* ===== ALAMAT ===== */
 .alamat{display:flex;gap:12px;align-items:flex-start;background:#fffaf0;border:1px solid var(--garis);border-radius:12px;padding:16px}
@@ -190,20 +127,14 @@ a:focus-visible,.card:focus-visible,.level:focus-visible{outline:3px solid var(-
 
 /* ===== TABLET ===== */
 @media(max-width:900px){
-  :root{--gap:10px}
+  :root{--gap:12px}
   .grid .card{width:calc((100% - 2 * var(--gap)) / 3)}
-  .hero-text h1{font-size:60px}
-  .hero-text h1 span{font-size:68px}
 }
 
 /* ===== HP ===== */
 @media(max-width:600px){
-  .hero-wrap{flex-direction:column;text-align:center;gap:28px}
-  .logo{width:220px;height:220px;border-width:6px}
-  .hero-text h1{font-size:52px}
-  .hero-text h1 span{font-size:60px}
-  .hero-text p{letter-spacing:3px;font-size:12px}
-
+  .hero-wrap{flex-direction:column;text-align:center;gap:24px}
+  .garis{margin:16px auto}
   .sec{padding:40px 12px}
   .sec h2{font-size:12px;padding:10px 20px;margin-bottom:22px}
 
@@ -215,7 +146,7 @@ a:focus-visible,.card:focus-visible,.level:focus-visible{outline:3px solid var(-
   .mie-list{padding:16px}
 
   .cart{padding:18px}
-  .online-buttons { grid-template-columns: 1fr; gap: 8px; }
-  .btn-online { flex-direction: row; padding: 12px; font-size: 12px; }
+  .online-buttons{grid-template-columns:1fr;gap:8px}
+  .btn-online{flex-direction:row;padding:12px;font-size:12px}
   .nav a{font-size:10px;padding:9px 2px}
 }
