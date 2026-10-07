@@ -22,7 +22,7 @@ const non = [
   { nama: "TARO MACCHIATTO", harga: 13000, foto: "poto1/TARO MACCHIATTO.jpeg" }
 ];
 
-const HARGA_MIE = 15000;
+const HARGA_MIE = 12000;
 const menu = { tea, non };
 let cart = [];
 
