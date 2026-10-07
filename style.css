@@ -335,7 +335,7 @@ a:focus-visible,.card:focus-visible,.level:focus-visible{outline:3px solid var(-
 }
 /* ===== PERBESAR SEMUA TAMPILAN (LAYAR LAPTOP/KOMPUTER) ===== */
 @media(min-width:901px){
-  html{zoom:1.7}
+  html{zoom:1.5}
   .hero-full{min-height:calc((100vh - 56px) / 1.3)}
 }
 /* ===== PERBESAR BAGIAN PESAN ===== */
